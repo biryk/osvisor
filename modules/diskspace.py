@@ -17,7 +17,8 @@ def humanbytes(num):
 
 def alertdisk():
     free = getdiskfree()
-    if free >= 5368709120:
-        return 1
+    if free <= 5368709120:
+        value = humanbytes(free)
+        return value
     else:
         return 0
