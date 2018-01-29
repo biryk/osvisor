@@ -13,7 +13,8 @@ icon = config['SLACK']['icon']
 
 def main():
     if alertdisk() != 0:
-        Mods.slack(slack_webhook_url, "Alert disk on host " + hostname + ", now available: " + str(alertdisk()), hostname, icon)
+        Mods.slack(slack_webhook_url, "Alert disk on host " + hostname + ", now available: " + str(alertdisk()), \
+                   hostname, icon)
     else:
         pass
 
