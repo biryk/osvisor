@@ -5,6 +5,8 @@ Need to create config.ini:
 admin_mail = example@email.com
 
 [SLACK]
-slack_webhook_url = https://hook
+slack_webhook_url = https://hook.com
+
 hostname = anyhost
+
 icon = :one: # from emoji list
