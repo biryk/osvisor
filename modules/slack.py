@@ -1,10 +1,11 @@
 import requests
 import json
+from classes.core import Main
 
 
-class Mods:
-    @staticmethod
-    def slack(hook_url, message, host, emoji):
+class Mods(Main):
+    @classmethod
+    def slack(cls, hook_url, message, host, emoji):
         data = {
             'text': message,
             'username': host,
