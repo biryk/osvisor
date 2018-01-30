@@ -8,3 +8,4 @@ class Main:
     admin_mail = config['DEFAULT']['admin_mail']
     hostname = config['SLACK']['hostname']
     icon = config['SLACK']['icon']
+
