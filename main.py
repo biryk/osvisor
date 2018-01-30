@@ -1,5 +1,5 @@
-from modules.slack import Mods
-from modules.diskspace import alertdisk
+from classes.modules.slack import Mods
+from classes.modules.diskspace import alertdisk
 from classes.core import Main
 
 
