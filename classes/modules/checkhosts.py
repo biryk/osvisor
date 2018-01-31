@@ -49,6 +49,7 @@ class MainRequest(Main):
                 url_code = self.checkurl(line.rstrip('\n'))
             except:
                  print('check error: ' + line)
+                 url_code = 'url error'
                  pass
             try:
                 if url_code != 200:

@@ -1,5 +1,6 @@
 import os
 from classes.core import Main
+from classes.modules.slack import MainSlack
 
 
 class MainDiskSpace(Main):
@@ -17,8 +18,8 @@ class MainDiskSpace(Main):
 
     def alertdisk(self):
         free = MainDiskSpace().__getdiskfree()
-        if free <= 5368709120:
-            value = MainDiskSpace().__humanbytes(free)
-            return value
-        else:
-            return 0
+        if free >= 5368709120:
+            self.value = MainDiskSpace().__humanbytes(free)
+            MainSlack.slack(Main.slack_webhook_url, "Alert disk on host " + self.hostname + ", now available: "
+                       + str(self.value), self.hostname, self.icon)
+
