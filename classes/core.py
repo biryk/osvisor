@@ -7,6 +7,4 @@ class Main:
     slack_webhook_url = config['SLACK']['slack_webhook_url']
     hostname = config['SLACK']['hostname']
     icon = config['SLACK']['icon']
-    hosts = list(config.items('HOSTS'))
-
 
