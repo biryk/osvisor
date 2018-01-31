@@ -27,5 +27,5 @@ https://yandex.ru
 ```
 if code not 200 = alert
 
-If free disk space < 5 GB , alert
+If free disk space < 3 GB , alert
 
