@@ -1,14 +1,12 @@
 # osvisor
 Need to create config.ini:
 
-[DEFAULT]
+```conf
+    [SLACK]
 
-admin_mail = example@email.com
+    slack_webhook_url = https://hook.com
 
-[SLACK]
+    hostname = anyhost
 
-slack_webhook_url = https://hook.com
-
-hostname = anyhost
-
-icon = :one: # from emoji list
+    icon = :one: # from emoji list
+```
