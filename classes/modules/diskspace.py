@@ -18,7 +18,7 @@ class MainDiskSpace(Main):
 
     def alertdisk(self):
         free = MainDiskSpace().__getdiskfree()
-        if free >= 3221225472:
+        if free <= 3221225472:
             self.value = MainDiskSpace().__humanbytes(free)
             MainSlack.slack(Main.slack_webhook_url, "Alert disk on host " + self.hostname + ", now available: "
                        + str(self.value), self.hostname, self.icon)
