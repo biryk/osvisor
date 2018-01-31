@@ -1,4 +1,6 @@
 # osvisor
+Simple monitoring with only slack alerts
+
 Need to create config/config.ini:
 
 ```conf
