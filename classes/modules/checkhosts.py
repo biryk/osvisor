@@ -24,7 +24,11 @@ class MainRequest(Main):
             return 1
 
     def sort_host(self):
-        file_hosts = open('hosts.txt', 'r')
+        try:
+            file_hosts = open('hosts.txt', 'r')
+        except FileNotFoundError:
+            return
+
         for line in file_hosts:
             ip_splited = line.split(',')
             ip = ip_splited[0]
