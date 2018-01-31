@@ -21,7 +21,7 @@ class MainRequest(Main):
 
     def check_file_hosts(self):
         try:
-            file_hosts = open('hosts.txt', 'r')
+            file_hosts = open('config/hosts.conf', 'r')
         except FileNotFoundError:
             return
 
@@ -40,7 +40,7 @@ class MainRequest(Main):
 
     def check_file_urls(self):
         try:
-            file_urls = open('urls.txt', 'r')
+            file_urls = open('config/urls.conf', 'r')
         except FileNotFoundError:
             return
 
