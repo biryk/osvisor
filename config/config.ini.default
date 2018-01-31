@@ -1,0 +1,4 @@
+[SLACK]
+slack_webhook_url = https://url
+hostname = TEST
+icon = :robot:
