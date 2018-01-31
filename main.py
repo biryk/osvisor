@@ -1,4 +1,4 @@
-#!/bin/bash/python3.5
+#!/usr/bin/python3.5
 
 from classes.modules.diskspace import MainDiskSpace
 from classes.modules.checkhosts import MainRequest
