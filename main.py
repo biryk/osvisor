@@ -10,7 +10,8 @@ def main():
                         ", now available: " + str(aler().alertdisk()), Main.hostname, Main.icon)
     else:
         pass
-    MainRequest().sort_host()
+    MainRequest().check_file_hosts()
+    MainRequest().check_file_urls()
 
 
 if __name__ == "__main__":

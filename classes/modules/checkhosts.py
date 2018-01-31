@@ -7,11 +7,7 @@ from classes.modules.slack import MainSlack
 class MainRequest(Main):
 
     def checkurl(self, url):
-        try:
-            req = requests.get(url).status_code
-        except:
-            pass
-            req = 'error connect'
+        req = requests.get(url).status_code
         return req
 
     def checkport(self, ip, port):
@@ -23,7 +19,7 @@ class MainRequest(Main):
         else:
             return 1
 
-    def sort_host(self):
+    def check_file_hosts(self):
         try:
             file_hosts = open('hosts.txt', 'r')
         except FileNotFoundError:
@@ -40,6 +36,27 @@ class MainRequest(Main):
             if r == 1:
                 MainSlack.slack(Main.slack_webhook_url, "Host not available: " + str(ip) + " port: " + str(port), Main.hostname, Main.icon)
             else:
+                pass
+
+    def check_file_urls(self):
+        try:
+            file_urls = open('urls.txt', 'r')
+        except FileNotFoundError:
+            return
+
+        for line in file_urls:
+            try:
+                url_code = self.checkurl(line.rstrip('\n'))
+            except:
+                 print('check error: ' + line)
+                 pass
+            try:
+                if url_code != 200:
+                    MainSlack.slack(Main.slack_webhook_url, "Url  not available, status code: " + str(url_code)+ ', '
+                                    + line, Main.hostname, Main.icon)
+                else:
+                    pass
+            except UnboundLocalError:
                 pass
 
 
