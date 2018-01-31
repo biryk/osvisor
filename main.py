@@ -9,7 +9,6 @@ def main():
     MainRequest().check_file_hosts()
     MainRequest().check_file_urls()
 
-
 if __name__ == "__main__":
     main()
 
